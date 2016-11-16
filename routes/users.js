@@ -84,7 +84,7 @@ router.get('/', function(req, res, next) {
                     case 'help':
                         //utility.getHelp(res, function(callback) {
                             pubnub.publish({
-                                channel: "MainChat",
+                                channel: "GAChatBot",
                                 message: {
                                     "type": "groupMessage",
                                     "data": {
@@ -104,7 +104,7 @@ router.get('/', function(req, res, next) {
                     case 'summary':
                         var summ = utility.getSummary(res, function(callback) {
                             pubnub.publish({
-                                channel: "MainChat",
+                                channel: "GAChatBot",
                                 message: {
                                     "type": "groupMessage",
                                     "data": {
@@ -124,7 +124,7 @@ router.get('/', function(req, res, next) {
                     case 'platform':
                         utility.getPlatform(res, function(callback) {
                             pubnub.publish({
-                                channel: "MainChat",
+                                channel: "GAChatBot",
                                 message: {
                                     "type": "groupMessage",
                                     "data": {
@@ -145,7 +145,7 @@ router.get('/', function(req, res, next) {
                     case 'geo':
                         utility.getGeo(res, function(callback) {
                             pubnub.publish({
-                                channel: "MainChat",
+                                channel: "GAChatBot",
                                 message: {
                                     "type": "groupMessage",
                                     "data": {
@@ -166,7 +166,7 @@ router.get('/', function(req, res, next) {
                     case 'browser':
                         utility.getBrowser(res, function(callback) {
                             pubnub.publish({
-                                channel: "MainChat",
+                                channel: "GAChatBot",
                                 message: {
                                     "type": "groupMessage",
                                     "data": {
@@ -187,7 +187,7 @@ router.get('/', function(req, res, next) {
                     case 'speed':
                         utility.getSpeed(res, function(callback) {
                             pubnub.publish({
-                                channel: "MainChat",
+                                channel: "GAChatBot",
                                 message: {
                                     "type": "groupMessage",
                                     "data": {
@@ -215,11 +215,11 @@ router.get('/', function(req, res, next) {
 
     console.log("Subscribing..");
     pubnub.subscribe({
-        channels: ['MainChat']
+        channels: ['GAChatBot']
     });
 
     /* pubnub.publish({
-            channel: "MainChat",
+            channel: "GAChatBot",
             message: {
 							 		"type": "groupMessage",
 							 		"data": {
